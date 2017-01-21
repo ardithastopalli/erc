@@ -1,0 +1,30 @@
+<template name="manageAbout">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-color panel-primary">
+                <div class="panel-heading">
+                    <span class="panel-title">Informacione pagina.</span>
+                    <a class="btn btn-default save-content pull-right"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salva</a>
+                </div>
+
+                <div class="panel-body">
+                    <textarea id="about-content" class="summer-note"></textarea>
+                    {{ #with aboutContent }}
+                    <input type="hidden" id="about-content-hidden" name="aboutContentHidden" value="{{ content }}">
+                    <input type="hidden" id="about-id-hidden" value="{{ _id }}">
+                    {{ /with }}
+
+                    <script>
+                        setTimeout(function() {
+                            let content = $('#about-content-hidden').val();
+                            $('#about-content').summernote('code', content);
+                        }, 1000);                
+                        
+                    </script>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</template>

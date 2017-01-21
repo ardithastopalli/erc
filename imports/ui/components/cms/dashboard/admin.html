@@ -1,0 +1,44 @@
+<template name="adminDashboard">
+    <div class="container container-cms">
+       <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="card-box widget-icon">
+                    <div>
+                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
+                        <div class="wid-icon-info">
+
+                            <p class="text-muted m-b-5 font-13 text-uppercase">Administrator</p>
+                            <h4 class="m-t-0 m-b-5 counter">  <span id="admin-count">({{ adminCount }} Administrator)</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card-box widget-icon">
+                    <div>
+                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
+                        <div class="wid-icon-info">
+                            <p class="text-muted m-b-5 font-13 text-uppercase">Users</p>
+                            <h4 class="m-t-0 m-b-5 counter">{{ userCount }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="card-box widget-icon">
+                    <div>
+                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
+                        <div class="wid-icon-info">
+                            <p class="text-muted m-b-5 font-13 text-uppercase">Operator</p>
+                            <h4 class="m-t-0 m-b-5 counter">{{ operatorCount }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+        </div>
+    </div>
+</template>

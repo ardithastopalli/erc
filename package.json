@@ -1,0 +1,15 @@
+{
+  "name": "erc",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "babel-runtime": "6.18.0"
+  },
+  "kadira": { 
+  "appId": "hkpp9J8XnqGvZ82rZ", 
+  "appSecret": "d636c6ea-73de-45ff-a699-141a673dce4e" 
+ }
+}

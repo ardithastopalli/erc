@@ -1,0 +1,111 @@
+<template name="userDashboard">
+    <div class="container container-cms">
+                        {{#with user}}
+       
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="text-center card-box">
+                    <div class="member-card">
+                        <div class="thumb-xl member-thumb m-b-10 center-block">
+                            <img id="ep-photo-view" src="{{ profile.photo }}" class="img-circle img-thumbnail" alt="profile-image">
+                        </div>
+                     
+                         <h1> {{profile.firstName}} {{firstName}}</h1>
+                        <div class="">
+                            <h4 class="m-b-5">{{ profile.firstName }} {{ profile.lastName }}</h4>
+                        </div>
+                        <div class="text-left m-t-40">
+                            <p class="text-muted font-13"><strong>E-mail :</strong> <span class="m-l-15">{{ email }}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end card-box -->
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h4 class="m-t-0 header-title"><b>Complete profile</b></h4>
+                <br>
+                <form id="save-user">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Name</label>
+                            <input type="text" value="{{ profile.firstName}}" class="form-control" id="first-name" name="firstname">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last name</label>
+                            <input type="text" value={{profile.lastName}} class="form-control" id="last-name" name="lastname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile</label>
+                        <input type="text" value={{profile.phone}} class="form-control" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Latitude</label>
+                        <input disabled type="text" class="form-control" id="latitude" name="latitude">
+                    </div>
+                    <div class="form-group">
+                        <label>Longitude</label>
+                        <input disabled type="text" class="form-control" id="longitude" name="longitude">
+                    </div>
+                    <div class="form-group">
+                        <label>Your SOS code</label>
+                        <input disabled value={{profile.sos}} type="text" class="form-control" id="sos" name="sos">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Foto</label>
+                        <div class="col-md-10">
+                            <div class="fileupload btn btn-purple waves-effect waves-light">
+                                <span><i class="fa fa-picture-o" aria-hidden="true"></i> Carica</span>
+                                <input name="image" type="file" class="upload" id="profile-photo">
+                            </div>
+                            <label for="profile-photo" generated="true" class="error"></label>
+                            <!--<div>
+                                
+                            </div>-->
+                            <input type="hidden" value="{{profile.photo}}" id="profile-sponsor-base64" name="profileBase64">
+                            <img name="image" src="{{profile.photo}}" id="profile-sponsor">
+                        </div>
+                    </div>
+                    <script>
+                    $(function() {                                       // <== Doc Ready
+                                                    $("#first-name").change(function() {                  // When the email is changed
+                                                        $('#sos').val(this.value[0]);                  // copy it over to the mail
+                                                    });
+                                                    $("#last-name").change(function() {                  // When the email is changed
+                                                       $('#sos').val($('#sos').val() + this.value[0]);                  // copy it over to the mail
+                                                    });
+                                                    $("#phone").change(function() {   
+                                                        let test = $('#phone').val();               // When the email is changed
+                                                        $('#sos').val($('#sos').val()+ test.slice(-2));    
+                                                        console.log(test);              // copy it over to the mail
+                                                    });
+                                                });
+                </script>
+                    <button type="submit" id="add-user-data" class="btn btn-primary btn-custom w-md waves-effect waves-light">Save data</button>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div id="mapContainer" class="map-container">
+                    {{#unless geolocationError}} {{> googleMap name="map" options=mapOptions}} {{else}} Geolocation failed: {{geolocationError}}
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+       
+    </div>
+    <style>
+        .map-container {
+            width: 800px;
+            max-width: 100%;
+            height: 500px;
+        }
+        
+        #profile-sponsor {
+            float: right;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</template>

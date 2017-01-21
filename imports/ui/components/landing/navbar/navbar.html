@@ -1,0 +1,93 @@
+<template name="landingNavbar">
+   <!--{{ #with navbar }}-->
+
+  <div class="tagline hidden-xs">
+    <div class="container">
+      <div class="pull-left">
+        <div class="phone">
+          <i class="fa fa-phone" aria-hidden="true"></i> {{ phoneSupport }}
+        </div>
+        <div class="email">
+          <a href="mailto:#">
+            <i class="fa fa-at" aria-hidden="true"></i> {{ emailSupport }}
+          </a>
+        </div>
+      </div>
+      <div class="pull-right">
+        <ul class="top_navmore">
+
+          {{ #with currentUser }}
+
+            {{#if isUserById _id}}
+               <li id="go-to-dashboard"><a href="/user/dashboard">Dashboard</a></li>
+            {{/if}}
+
+            {{#if isAdminById _id}}
+               <li id="go-to-dashboard"><a href="/admin/dashboard">Dashboard</a></li>
+            {{/if}}
+            {{#if isOperatorById _id}}
+               <li id="go-to-dashboard"><a href="/operator/dashboard">Dashboard</a></li>
+            {{/if}}
+         
+            <li><a class="logout" href="#">Logout</a></li>
+          {{ else }}
+          <li class="{{isActivePath path='/auth/login'}}" id="signup"><a href="/login">Login</a></li>
+          {{ /with }}
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="navbar navbar-custom sticky" role="navigation">
+    <div class="container">
+      <!-- Navbar-header -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fa fa-bars"></i>
+          </button>
+        <!-- LOGO -->
+        <a class="navbar-brand logo" href="/">
+          <span>
+            <img src="{{ websiteLogo }}" alt="" id="logo-landing">
+          </span>
+          <span id="website-name">{{ websiteName }}</span>
+        </a>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- menu -->
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="{{isActivePath path='/'}}">
+            <a href="/">Home</a>
+          </li>
+          <li class="{{isActivePath path='/about'}}">
+            <a href="/about">About us</a>
+          </li>
+          <!--{{ #unless currentUser}}-->
+          <li class="{{isActivePath path='/price'}}">
+            <a href="/price">Iscriviti</a>
+          </li>
+          <!--{{ /unless }}-->
+          <li class="{{isActivePath path='/members'}}">
+            <a href="/members">Soci</a>
+          </li>
+          <li class="{{isActivePath path='/sponsors'}}">
+            <a href="/sponsors">Sostenitori & Partners</a>
+          </li>
+          <li class="{{isActivePath path='/funds'}}">
+            <a href="/funds">Fondi Europei</a>
+          </li>
+          <li class="{{isActivePath path='/news'}}"><a href="/news">Notizie</a></li>
+          <li class="{{isActivePath path='/contact'}}"><a href="/contact">Contatti</a></li>
+        </ul>
+      </div>
+      <!--/Menu -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!--{{ /with }}-->
+  <div class="clearfix"></div>
+    
+</template>

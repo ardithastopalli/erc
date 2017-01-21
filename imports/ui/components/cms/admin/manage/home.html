@@ -1,0 +1,111 @@
+<template name="manageHome">
+    <form id="manage-home">
+         <!--{{#with homepage}}-->
+        <div class="panel-group panel-group-joined" id="accordion-manage">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-manage" href="#navbar-manage" class="collapsed">
+                        Barra di navigazione
+                    </a>
+                    </h4>
+                </div>
+                <div id="navbar-manage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                <input type="text" class="form-control" placeholder="Supporto numero di telefono" name="phoneSupport" value="{{ phoneSupport }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-life-ring" aria-hidden="true"></i></span>
+                                <input type="email" class="form-control" placeholder="Supporto e-mail" name="emailSupport" value="{{ emailSupport }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-font" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" placeholder="Sito web" name="websiteName" value="{{ websiteName }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="card-box">
+                                <h4 class="text-dark  header-title m-t-0">Caricare un nuovo logo</h4>
+                                <div class="fileupload btn btn-purple waves-effect waves-light">
+                                    <span><i class="fa fa-picture-o" aria-hidden="true"></i> Caricare</span>
+                                    <input type="file" class="upload" name="homeLogo" id="home-logo">
+                                </div>
+
+                                <img src="{{ websiteLogo }}" alt="" id="logo-admin">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-manage" href="#body-manage" class="collapsed">
+                        Corpo
+                    </a>
+                    </h4>
+                </div>
+                <div id="body-manage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon"><i class="fa fa-italic" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" placeholder="Titolo homepage" name="homepageTitle" value="{{ homepageTitle }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                                <!--<textarea rows="6" type="text" class="form-control no-resize" placeholder="Homepage description" name="homepageDescription" value="{{ homepageDescription }}">
+                                </textarea>-->
+                                <input type="text" class="form-control" placeholder="Descrizione Homepage" name="homepageDescription" value="{{ homepageDescription }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="card-box">
+                                <h4 class="text-dark  header-title m-t-0">Caricare una nuova immagine per la homepage</h4>
+                                <div class="fileupload btn btn-purple waves-effect waves-light">
+                                    <span><i class="fa fa-picture-o" aria-hidden="true"></i> Caricare</span>
+                                    <input type="file" class="upload" name="homeImage" id="home-image">
+                                </div>
+
+                                <img src="{{ homeImage }}" alt="" id="logo-admin">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-manage" href="#footer-manage" class="collapsed">
+                        Footer
+                    </a>
+                    </h4>
+                </div>
+                <div id="footer-manage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-copyright" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" placeholder="Informazioni Copyright" name="copyrightInfo" value="{{ copyrightInfo }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <input type="hidden" value="{{ _id }}" id="homepage-id">
+        <!--{{/with}}-->
+        <button type="submit" class="btn btn-purple waves-effect waves-light pull-right">Salva</button>
+    </form>
+</template>

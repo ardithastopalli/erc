@@ -1,0 +1,58 @@
+<template name="login">
+    <div class="wrapper-page">
+        <!--{{ #if currentUser }}-->
+        <p>Si è già connesso in. Si prega di disconnettersi per visualizzare questa pagina.</p>
+        <!--{{ else }}-->
+        <div class="text-center">
+            <a href="/" class="logo logo-lg"><i class="md md-equalizer"></i> <span>Accedi</span> </a>
+        </div>
+
+        <form class="form-horizontal m-t-20" id="login-form">
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input class="form-control" type="email" name="email" placeholder="Email">
+                    <i class="fa fa-at l-h-34 form-control-feedback" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input id="passId" class="form-control" type="password" name="password" placeholder="Password" data-indicator="pwindicator">
+                    <i class="fa fa-lock l-h-34 form-control-feedback" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <!--<div class="form-group">
+                <div class="col-xs-12">
+                    <div class="checkbox checkbox-primary">
+                        <input id="checkbox-signup" type="checkbox">
+                        <label for="checkbox-signup">
+                                Remember me
+                            </label>
+                    </div>
+
+                </div>
+            </div>-->
+
+            <div class="form-group text-right m-t-20">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-custom w-md waves-effect waves-light" type="submit">Login
+                        </button>
+                </div>
+            </div>
+
+            <div class="form-group m-t-30">
+                <div class="col-sm-7">
+                    <a href="/auth/forgot" class="text-muted"><i class="fa fa-lock m-r-5"></i>lost password??</a>
+                </div>
+                <div class="col-sm-5 text-right pull-right">
+                    <a href="/signup" class="text-muted">Register.</a>
+                </div>
+            </div>
+        </form>
+        <!--{{ /if }}-->
+    </div>
+
+
+</template>

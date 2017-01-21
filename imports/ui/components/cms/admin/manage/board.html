@@ -1,0 +1,116 @@
+<template name="manageBoard">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary waves-effect waves-light m-t-10 pull-right" data-toggle="modal" data-target=".add-board-modal">Add</button>
+            <div id="edit-modal" class="modal fade add-board-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+                style="display: none;">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="mySmallModalLabel">Add operator</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="add-board-member">
+                               
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Nome" name="firstname">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Cognome" name="lastname">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div id="email" class="input-group">
+                                        <span  class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                        <input type="email" class="form-control" placeholder="E-mail" name="email">
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                                        <select name="status" class="form-control" id="status">
+                                        <option value="0">Selezionare il ruolo</option>
+                                        <option>Presidente</option>
+                                        <option>Vice Presidente</option>
+                                        <option>Tesoriere</option>
+                                        <option>Segretario</option>
+                                    </select>
+                                    </div>
+                                </div>-->
+
+                                <!--<div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input type="text" class="form-control" placeholder="Descrizione" name="description">
+                                    </div>
+                                </div>-->
+
+                                <div class="form-group">
+                                    <div id="password-board" class="input-group">
+                                        <span id="span" class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input id="password" type="password" class="form-control" placeholder="Password" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div id="password-confrim-board" class="input-group">
+                                        <span id="span" class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" placeholder="Conferma password" name="passwordConfirm">
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <div class="fileupload btn btn-purple waves-effect waves-light">
+                                        <span><i class="fa fa-picture-o" aria-hidden="true"></i> Carica immagine</span>
+                                        <input name="image" type="file" class="upload" id="profile-photo">
+                                    </div>
+                                    <label for="profile-photo" generated="true" class="error"></label>
+                                    <input type="hidden" id="profile-sponsor-base644" name="profileBase644" value="">
+                                    <img name="image" src="" id="profile-sponsor1">
+
+                                </div>-->
+                                <input id="post-button" type="submit" value="Add operator" class="btn btn-primary btn-block">
+                                 <input type="hidden" id="post-id" name="postId">
+                                <!-- form-group -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-10">
+        <div class="col-md-12">
+            <table class="table table-bordered m-0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last name</th>
+                        <th>E-mail</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{ #each boardMembers }}
+                    <tr>
+                        <td>{{ profile.firstname }}</td>
+                        <td>{{ profile.lastname }}</td>
+                        <td>{{ email }}</td>
+                        <td>{{ profile.status }}</td>
+                        <td>{{ profile.description }}</td>
+                        <td>
+                            <button class="btn btn-danger delete-board"><i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-primary pull-right edit-board"><i class="fa fa-edit"></i></button>
+                        </td>
+                    </tr>
+                    {{ /each }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

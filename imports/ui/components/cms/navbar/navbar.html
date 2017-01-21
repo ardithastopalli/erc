@@ -1,0 +1,107 @@
+<template name="cmsNavbar">
+    {{#with currentUser}}
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="topbar-main">
+
+            <div class="container">
+
+                <!-- Logo container-->
+                <div class="logo">
+
+                    {{#if isUserById _id}}
+                    <a href="/user/dashboard" class="logo"><i class="md md-equalizer"></i> <span>User Dashboard</span> </a> 
+                    {{/if}}
+                    {{#if isAdminById _id}}
+                    <a href="/admin/dashboard" class="logo"><i class="md md-equalizer"></i> <span>Admin Dashboard</span> </a>                   
+                     {{/if}}
+                     {{#if isOperatorById _id}}
+                    <a href="/operator/dashboard" class="logo"><i class="md md-equalizer"></i> <span>Operator Dashboard</span> </a>                   
+                     {{/if}}
+
+
+                </div>
+                <!-- End Logo container-->
+
+                <div class="menu-extras">
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
+                                <img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" alt="user-img"
+                                    class="img-circle">
+                            </a>
+
+
+                            <ul class="dropdown-menu">
+                                <!--{{#if isEPById _id}}-->
+                                    <li><a href="/ep/profile"> Profilo</a></li>
+                                <!--{{/if}}-->
+
+                                <!--{{#if isAdminById _id}}-->
+                                    <li><a href="/admin/profile"> Profilo</a></li>
+                                <!--{{/if}}-->
+                                <li><a class="logout" href=""> Esci</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End topbar -->
+
+
+        <!-- Navbar Start -->
+        <div class="navbar-custom">
+            <div class="container">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        {{#if isUserById _id}}
+                        <li class="has-submenu {{isActivePath path='/user/dashboard'}}">
+                            <a href="/user/dashboard"><i class="md md-dashboard"></i>Dashboard</a>
+                        </li>
+                        <li class="has-submenu {{isActivePath path='/ep/cv'}}">
+                            <a href="/user/profile"><i class="md md-color-lens"></i>Profile</a>
+                        </li>
+                        {{ /if }}
+
+                         {{#if isAdminById _id}}
+                        <li class="has-submenu {{isActivePath path='/admin/dashboard'}}">
+                            <a href="/admin/dashboard"><i class="md md-dashboard"></i>Dashboard</a>
+                        </li>
+                        <li class="has-submenu {{isActivePath path='/admin/manage'}}">
+                            <a href="/admin/manage"><i class="md md-color-lens"></i>Manage</a>
+                        </li>
+                        <li class="has-submenu {{isActivePath path='/admin/contact'}}">
+                            <a href="/admin/contact"><i class="md md-color-lens"></i>Contacts</a>
+                        </li>
+
+                        {{/if}}
+                    </ul>
+                    <!-- End navigation menu -->
+                </div>
+                <!-- end #navigation -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end navbar-custom -->
+    </header>
+    {{/with}}
+</template>

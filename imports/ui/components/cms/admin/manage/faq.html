@@ -1,0 +1,55 @@
+<template name="manageFaqs">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-border panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Aggiungi nuova Faq</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" id="add-post-faq">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Titolo</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="postTitle" id="post-title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Descrizione</label>
+                            <div class="col-md-10">
+                                <textarea id="post-description" class="form-control resize-none" rows="5" name="postDescription"></textarea>
+                            </div>
+                        </div>
+                        
+                        <input id="post-button" class="btn waves-effect waves-light pull-right" type="submit" value="Aggiungere">
+                        <input type="hidden" id="post-id" name="postId">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>   
+                        <th>Titolo</th>
+                        <th>Descrizione</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ #each faq }}
+                        <tr data-expanded="true">
+                            <td>{{ title }}</td>
+                            <td>{{ description }}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger delete-faq">Cancella</button>
+                                <button type="button"  class="btn btn-primary edit-faq">Modifica</button>
+                            </td>
+                        </tr>
+                    {{ /each }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</template>

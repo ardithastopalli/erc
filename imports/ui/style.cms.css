@@ -1,0 +1,115 @@
+.resize-none { 
+    resize: none;
+}
+
+.container-cms {
+    margin-top: 165px;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+/*
+    admin contact form
+*/
+.inbox-item-title {
+    color: #000;
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0;
+}
+
+
+
+.inbox-item-subject {
+    color: #a0a0a0;
+    display: block;
+    font-size: 12px;
+    margin: 0;
+}
+
+.inbox-item-emailname {
+    color: #333333;
+    display: block;
+    margin: 0;
+}
+
+.inbox-item-user {
+     text-transform: capitalize;
+}
+
+.inbox-item-email {
+    font-style: italic;
+    margin: 0;
+}
+
+.inbox-item-phone {
+    font-style: italic;
+    margin: 0 0 10 0;
+}
+
+.inbox-item-options {
+    position: absolute;
+    right: 7px;
+    top: 22px;
+}
+
+#logo-admin {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    float: right;
+}
+
+.user-picture {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.navigation-menu .board-menu {
+    float: right;
+    background-color: #3bafda;
+    
+}
+.board-menu a {
+    color: #fff;
+}
+
+
+#myLargeModalLabel {
+    text-align: center;
+}
+
+#applicant-photo {
+    width: 144px;
+    height: 144px;
+    margin-top: -40px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name-surname{
+    text-align: center;
+}
+
+.p-b-30 {
+    padding-bottom: 30px;
+}
+
+.proj-info {
+        height: 55px;
+}
+
+.m-b-50 {
+    margin-bottom: 50px;
+}
+
+
+/*Add board*/
+#profile-photo-error {
+    display: inline;
+}

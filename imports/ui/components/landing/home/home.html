@@ -1,0 +1,386 @@
+<template  name="landingHome">
+   
+
+
+
+ 
+
+
+  <!-- HOME -->
+  <section class="home bg-img-1 parallax" data-stellar-background-ratio="0.5">
+    <div class="bg-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="home-wrapper text-center">
+            <h1 class="animated fadeInDown wow" data-wow-delay=".1s">ASSOCIAZIONE EUROPROGETTISTI ITALIANI</h1>
+            <p class="animated fadeInDown wow" data-wow-delay=".2s">
+				L’ASSOCIAZIONE DEGLI EUROPROGETTISTI ESPERTI CHE CONTRIBUISCONO AL SUCCESSO DELLE AZIENDE E DEGLI ENTI ITALIANI CON UN APPROCCIO PROFESSIONALE E NEL RISPETTO DI REGOLE DEONTOLOGICHE TRASPARENTI E CONDIVISE.
+			</p>
+      {{#unless currentUser}}
+            <a href="/signup" class="btn btn-primary btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Register now</a>
+            {{/unless}}
+            <div class="clearfix"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END HOME -->
+
+
+  <!-- SERVICES -->
+  <section class="section" id="how-it-work">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2 class="title zoomIn animated wow" data-wow-delay=".1s">Associazione EuroProgettisti Italiani</h2>
+          <p class="sub-title zoomIn animated wow" data-wow-delay=".2s">Constituto voluptatibus mei ex. Eum soleat lorem Ipsum is simply dummy<br/> text of the printing and typesetting industry. </p>
+        </div> 
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
+            <i class=" ti-desktop"></i>
+            <div class="service-detail">
+              <h4>AssoEPI</h4>
+              <p>
+				AssoEPI è l’Associazione degli Europrogettisti italiani. 
+				E’ senza scopi di lucro, non fornisce servizi di Europrogettazione 
+				ma si pone l’obiettivo di rappresentare, tutelare e promuovere gli 
+				interessi dei propri associati, per contribuire a diffondere la cultura 
+				dell’Europrogettazione di qualità a beneficio delle imprese e degli enti italiani, 
+				sia pubblici che privati.
+			  
+			  </p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->
+
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInDown wow" data-wow-delay=".3s">
+            <i class=" ti-shield"></i>
+            <div class="service-detail">
+              <h4>Diventa Socio</h4>
+              <p>
+				Possono associarsi ad AssoEPI, in qualità di Socio Europrogettista, 
+				tutte le persone fisiche che svolgono professionalmente l’attività 
+				di Europrogettazione e che hanno predisposto almeno un progetto finanziato 
+				con fondi pubblici a condizioni agevolate.
+			  </p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->
+
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInRight wow" data-wow-delay=".5s">
+            <i class=" ti-server"></i>
+            <div class="service-detail">
+              <h4>News</h4>
+              <p>
+				Partecipa ai prossimi eventi organizzati da AssoEPI con lo scopo di fare conoscere 
+				i propri obiettivi e la propria organizzazione, approfondire i temi più attuali 
+				relativi all’Europrogettazione e comprendere le regole di base per predisporre 
+				una proposta progettuale di successo.
+			  </p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->       
+      </div> <!--end row -->
+
+
+      
+
+
+    </div>
+  </section>
+  <!-- END SERVICES -->
+
+
+  <!-- SCREENSHOTS -->
+  <section class="section bg-gray" id="features">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="feature-detail">
+            <h2 class="title fadeIn animated wow" data-wow-delay=".1s">AssoEPI</h2>
+            <p class="sub fadeIn animated wow" data-wow-delay=".2s">
+				AssoEPI è l’Associazione degli Europrogettisti Italiani
+			</p>
+
+            <ul class="list-unstyled">
+              <li>
+                <i class=" ti-arrow-circle-right"></i>
+                Trasparenza: i profili professionali dei Soci Europrogettisti sono pubblicati in un formato standard, insieme all’elenco dei principali progetti da loro seguiti
+              </li>
+              <li>
+                <i class=" ti-arrow-circle-right"></i>
+                Etica professionale: i soci devono accettare formalmente il Codice Etico e il Regolamento Interno, oltre alle norme inserite nello Statuto
+              </li>
+			  <li>
+                <i class=" ti-arrow-circle-right"></i>
+                Tutela: AssoEPI rappresenta, tutale e promuove gli interessi degli Europrogettisti associati. L'Associazione non svolge attività di Europrogettazione
+              </li>
+
+            </ul>
+
+            <a href="" class="btn btn-primary btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Read more</a>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <img src="http://assoepi.com/images/consiglio_milano_23giu16_2.jpg" class="img-responsive img-thumbnail">
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END SCREENSHOTS -->
+
+  
+  <!-- HOME -->
+  <section class="fun-facts bg-img-2 parallax" data-stellar-background-ratio="0.5">
+    <div class="bg-overlay"></div>
+    <div class="container">
+
+            <div class="row text-center">
+                <div class="col-md-4 col-sm-4 facts">
+                  <i class="ti-pencil-alt"></i>
+                    <h1><span class="counter">100</span> +</h1>
+                    <h4>Sponsors</h4>
+                </div>
+                <!-- /facts-1 -->
+                <div class="col-md-4 col-sm-4 facts">
+                  <i class="ti-timer"></i>
+                    <h1> <span class="counter">50</span> +</h1>
+                    <h4>Europrogetisti</h4>
+                </div>
+                <!-- /facts-2 -->
+                <div class="col-md-4 col-sm-4 facts">
+                  <i class="ti-briefcase"></i>
+                    <h1 class="counter">25000</h1>
+                    <h4>Monthly users</h4>
+                </div>
+                <!-- /facts-3 -->
+            </div>
+    </div>
+  </section>
+  <!-- END HOME -->
+
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Pricing</h1>
+          <p class="sub-title zoomIn animated wow" data-wow-delay=".2s">Constituto voluptatibus mei ex. Eum soleat lorem Ipsum is simply dummy<br/> text of the printing and typesetting industry. </p>
+        </div> 
+      </div> <!-- end row -->
+
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="row">
+                          
+                <!-- Pricing Item -->
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="pricing-item animated fadeInLeft wow" data-wow-delay=".3s">
+                    <div class="pricing-item-inner">
+                      <div class="pricing-wrap">   
+
+                        <div class="pricing-num pricing-num-pink">
+                          <sup>$</sup>10
+                        </div>
+                        <div class="pr-per">
+                          per month
+                        </div>    
+
+                        <!-- Pricing Title -->
+                        <div class="pricing-title">
+                          Become a supporter
+                        </div>          
+                        <!-- Pricing Features -->
+                        <div class="pricing-features">
+                          <ul class="sf-list pr-list">
+                            <li>Show on the list</li>
+                            <li>Free Support</li>
+                          </ul>
+                        </div>
+                                          
+                        <!-- Button -->                     
+                        <div class="pr-button">
+                          <a href="" class="btn btn-primary btn-rnd">Buy Now</a> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- End Pricing Item -->
+
+              <!-- Pricing Item -->
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="pricing-item main animated fadeInLeft wow" data-wow-delay=".5s">
+                     <div class="ribbon"><span>POPULAR</span></div>
+                    <div class="pricing-item-inner">
+                      <div class="pricing-wrap">   
+
+
+                        <div class="pricing-num">
+                          <sup>$</sup>30
+                        </div>
+                        <div class="pr-per">
+                          per month
+                        </div>      
+
+                        <!-- Pricing Title -->
+                        <div class="pricing-title">
+                          Europrogetisti pack
+                        </div>          
+                        <!-- Pricing Features -->
+                        <div class="pricing-features">
+                          <ul class="sf-list pr-list">
+                            <li>Profile</li>
+                            <li>Add 10 projects</li>
+                            <li>Free Support</li>
+                          </ul>
+                        </div>                
+                        <!-- Button -->                     
+                        <div class="pr-button">
+                          <a href="" class="btn btn-primary btn-rnd">Buy Now</a> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- End Pricing Item -->
+
+              <!-- Pricing Item -->
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="pricing-item animated fadeInLeft wow" data-wow-delay=".7s">
+                    <div class="pricing-item-inner">
+                      <div class="pricing-wrap">    
+
+
+                        <div class="pricing-num pricing-num-yellow">
+                          <sup>$</sup>15
+                        </div>
+                        <div class="pr-per">
+                          per month
+                        </div>   
+
+                        <!-- Pricing Title -->
+                        <div class="pricing-title">
+                          Ente pack
+                        </div>          
+                        <!-- Pricing Features -->
+                        <div class="pricing-features">
+                          <ul class="sf-list pr-list">
+                            <li>Profile (limited)</li>
+                            <li>Free support</li>
+                          </ul>
+                        </div>                   
+                        <!-- Button -->                     
+                        <div class="pr-button">
+                          <a href="" class="btn btn-primary btn-rnd">Buy Now</a> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- End Pricing Item -->
+              
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END PRICING -->
+
+
+  <!-- FAQ -->
+  <section class="section bg-gray" id="faq">
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title zoomIn animated wow" data-wow-delay=".1s">FAQ</h1>
+          <p class="sub-title zoomIn animated wow" data-wow-delay=".2s">Constituto voluptatibus mei ex. Eum soleat lorem Ipsum is simply dummy<br/> text of the printing and typesetting industry. </p>
+        </div> 
+      </div> <!-- end row -->
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+          <!-- Question/Answer -->
+          <div class="animated fadeInLeft wow" data-wow-delay=".1s">
+            <h4 class="question" data-wow-delay=".1s">What is Lorem Ipsum?</h4>
+            <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </div>
+
+          <!-- Question/Answer -->
+          <div class="animated fadeInLeft wow" data-wow-delay=".3s">
+            <h4 class="question">Why use Lorem Ipsum?</h4>
+            <p class="answer m-b-0">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
+          </div>
+
+        </div>
+        <!--/col-md-5 -->
+
+        <div class="col-md-5">
+          <!-- Question/Answer -->
+          <div class="animated fadeInRight wow" data-wow-delay=".2s">
+            <h4 class="question">Is safe use Lorem Ipsum?</h4>
+            <p class="answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </div>
+
+          <!-- Question/Answer -->
+          <div class="animated fadeInRight wow" data-wow-delay=".4s">
+            <h4 class="question">When can be used?</h4>
+            <p class="answer m-b-0">Lorem ipsum dolor sit amet, in mea nonumes dissentias dissentiunt, pro te solet oratio iriure. Cu sit consetetur moderatius intellegam, ius decore accusamus te. Ne primis suavitate disputando nam. Mutat convenirete.</p>
+          </div>
+
+        </div>
+        <!--/col-md-5-->
+      </div>
+
+    </div>
+  </section>
+  <!-- END FAQ -->
+
+  
+	<footer class="footer bg-dark">
+        <div class="container">
+        <div class="row">
+			<div class="col-sm-3">
+				<p class="copyright">2016 © Assoepi.com</p>
+            </div>
+			
+			<div class="col-sm-9">
+            <ul class="nav navbar-nav navbar-right">
+				<li>
+				  <a href="">Home</a>
+				</li>
+				<li>
+				  <a href="">About me</a>
+				</li>
+				<li>
+				  <a href="">Member</a>
+				</li>
+				<li>
+				  <a href="">Sponsors</a>
+				</li>
+				<li>
+				  <a href="">European funds</a>
+				</li>
+			</ul>
+            </div>
+                    
+        </div> <!-- end row -->
+		</div> <!-- end container -->
+    </footer>
+</template>
