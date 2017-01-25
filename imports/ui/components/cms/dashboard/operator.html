@@ -1,11 +1,112 @@
 <template name="operatorDashboard">
+    
+     
+
     <div class="container container-cms">
         <div class="row">
-            <h1>Operator Dashboard</h1>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <button type="submit" id="get-route">Calculate direction</button>
+                <h3>Users</h3>
+                <input type="hidden" name="lat" id="lat">
+                <input type="hidden" name="lang" id="lang">
+
+                
+                <table class="table table-bordered m-0" id="user-table">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Name</th>
+                            <th>Last name</th>
+                            <th>Phone</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>SOS code</th>
+                            
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                        <tr>
+                            <td>
+                                
+                                <img src="{{profile.photo}}" class="user-picture"> 
+                            </td>
+                            <td>{{profile.firstName}}</td>
+                            <td>{{profile.lastName}}</td>
+                            <td>{{profile.phone}}</td>
+                            <td>{{profile.lat}}</td>
+                            <td>{{profile.long}}</td>
+                            <td>{{profile.sos}}</td>
+                            
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
         <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="mapContainer" class="map-container">
+                    {{#unless geolocationError}} {{> googleMap name="map" options=mapOptions}} {{else}} Geolocation failed: {{geolocationError}}
+                    {{/unless}}
+                </div>
+            </div>
             
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <!--<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+   <!--  <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script> -->
+    
+    
+
+    <style>
+    
+    .dt-button {
+	    margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    #export-table_filter {
+        float: right;
+    }
+   #export-table-sponsor_filter {
+        float: right;
+    }
+    .map-container {
+            width: 100%;
+            max-width: 100%;
+            height: 500px;
+        }
+        
+        #profile-sponsor {
+            float: right;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        </style>
+
+
+
+    <!--<script src="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css"></script>-->
+    
+
+
 </template>

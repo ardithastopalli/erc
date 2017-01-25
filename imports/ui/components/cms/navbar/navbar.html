@@ -94,6 +94,15 @@
                         </li>
 
                         {{/if}}
+                        {{#if isOperatorById _id}}
+                         <li class="has-submenu {{isActivePath path='/operator/dashboard'}}">
+                            <a href="/operator/dashboard"><i class="md md-dashboard"></i>Dashboard</a>
+                        </li>
+                        <li class="has-submenu {{isActivePath path='/ep/cv'}}">
+                            <a href="/operator/profile"><i class="md md-color-lens"></i>Profile</a>
+                        </li>
+
+                        {{/if}}
                     </ul>
                     <!-- End navigation menu -->
                 </div>

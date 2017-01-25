@@ -21,7 +21,7 @@ Template.registerHelper('ifNotEmpty', function (item, options) {
 });
 
 
-Template.registerHelper('isOperatorById', function (id) {
+Template.registerHelper('isOperatorById', function (userId) {
    let isOperator = Meteor.users.findOne({
         _id: userId
     }).profile.role == "operator";

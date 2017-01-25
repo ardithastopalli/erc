@@ -138,6 +138,49 @@ userRoutes.route('/profile', {
     }
 });
 
+var operatorRoutes = FlowRouter.group({
+    prefix: "/operator",
+    name: "operator",
+    // this trigger runs before entering the route
+    triggersEnter: [
+        function () {
+            // set session variable
+            let route;
+            if (!(Meteor.loggingIn() || Meteor.userId())) {
+                route = FlowRouter.current();
+                if (route.route.name !== 'login') {
+                    Session.set('redirectAfterLogin', route.path);
+                }
+                return FlowRouter.go('/login');
+            }
+
+            // check the session variable 
+            // if user is loggedin
+            Accounts.onLogin(function () {
+                let redirect = Session.get('redirectAfterLogin');
+                if (redirect != null) {
+                    if (redirect !== '/login') {
+                        return FlowRouter.go(redirect);
+                    }
+                }
+            });
+
+
+        }
+    ]
+});
+
+operatorRoutes.route('/dashboard', {
+    action: function () {
+        BlazeLayout.render("cmsLayout", { content: "operatorDashboard" });
+    }
+});
+operatorRoutes.route('/profile', {
+    action: function () {
+        BlazeLayout.render("cmsLayout", { content: "operatorDashboard" });
+    }
+});
+
 
 // FlowRouter.route( '/verify-email/:token', {
 //   name: 'verify-email',
